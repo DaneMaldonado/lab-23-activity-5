@@ -1,6 +1,6 @@
-let i = 0
-let sprite: Sprite;
-while (i < 5) {
+let sprite: Sprite = null
+let value = 0
+while (value < 1) {
     sprite = sprites.create(img`
         . . . . c c c b b b b b . . . . 
         . . c c b 4 4 4 4 4 4 b b b . . 
@@ -19,11 +19,11 @@ while (i < 5) {
         . e e b b 4 4 4 4 4 4 4 4 e e . 
         . . . c c c c c e e e e e . . . 
         `, SpriteKind.Player)
-    sprite.setPosition(16 + i * 17, 10)
-    i += 1
+    sprite.setPosition(16 + value * 17, 10)
+    value += 1
 }
-i = 0
-while (i < 5) {
+value = 0
+while (value < 1) {
     sprite = sprites.create(img`
         . . 2 2 b b b b b . . . . . . . 
         . 2 b 4 4 4 4 4 4 b . . . . . . 
@@ -42,11 +42,11 @@ while (i < 5) {
         . . . . . . . . . . . c 1 b c . 
         . . . . . . . . . . . . c c . . 
         `, SpriteKind.Player)
-    sprite.setPosition(145, 16 + i * 16)
-    i += 1
+    sprite.setPosition(145, 16 + value * 16)
+    value += 1
 }
-i = 0
-while (i < 5) {
+value = 0
+while (value < 1) {
     sprite = sprites.create(img`
         . . . . . . b b b b . . . . . . 
         . . . . . . b 4 4 4 b . . . . . 
@@ -65,11 +65,12 @@ while (i < 5) {
         4 d d d 4 4 4 . . . . . . . . . 
         4 4 4 4 . . . . . . . . . . . . 
         `, SpriteKind.Player)
-    sprite.setPosition(22 + i * 13, 36 + i * 13)
-    i += 1
+    sprite.setPosition(22 + value * 13, 36 + value * 13)
+    value += 1
 }
-for (let y = 0; y <= 2; y++) {
-    for (let x = 0; x <= 2; x++) {
+for (let x = 0; x <= 2; x++) {
+    while (value < 1) {
+        let y = 0
         sprite = sprites.create(img`
             . . . . . . b b b b a a . . . . 
             . . . . b b d d d 3 3 3 a a . . 
@@ -92,4 +93,4 @@ for (let y = 0; y <= 2; y++) {
         sprite.setScale(0.8, ScaleAnchor.Middle)
     }
 }
-i = 0
+value = 0
