@@ -1,5 +1,8 @@
-i = 0
-while i < 5:
+y = 0
+x = 0
+sprite: Sprite = None
+value = 0
+while value < 1:
     sprite = sprites.create(img("""
             . . . . c c c b b b b b . . . . 
                     . . c c b 4 4 4 4 4 4 b b b . . 
@@ -19,10 +22,10 @@ while i < 5:
                     . . . c c c c c e e e e e . . .
         """),
         SpriteKind.player)
-    sprite.set_position(16 + i * 17, 10)
-    i += 1
-i = 0
-while i < 5:
+    sprite.set_position(16 + value * 17, 10)
+    value += 1
+value = 0
+while value < 1:
     sprite = sprites.create(img("""
             . . 2 2 b b b b b . . . . . . . 
                     . 2 b 4 4 4 4 4 4 b . . . . . . 
@@ -42,10 +45,10 @@ while i < 5:
                     . . . . . . . . . . . . c c . .
         """),
         SpriteKind.player)
-    sprite.set_position(145, 16 + i * 16)
-    i += 1
-i = 0
-while i < 5:
+    sprite.set_position(145, 16 + value * 16)
+    value += 1
+value = 0
+while value < 1:
     sprite = sprites.create(img("""
             . . . . . . b b b b . . . . . . 
                     . . . . . . b 4 4 4 b . . . . . 
@@ -65,29 +68,50 @@ while i < 5:
                     4 4 4 4 . . . . . . . . . . . .
         """),
         SpriteKind.player)
-    sprite.set_position(22 + i * 13, 36 + i * 13)
-    i += 1
-for y in range(3):
-    for x in range(3):
-        sprite = sprites.create(img("""
-                . . . . . . b b b b a a . . . . 
-                            . . . . b b d d d 3 3 3 a a . . 
-                            . . . b d d d 3 3 3 3 3 3 a a . 
-                            . . b d d 3 3 3 3 3 3 3 3 3 a . 
-                            . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
-                            . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
-                            b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
-                            b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
-                            b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
-                            a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
-                            a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
-                            a a 3 3 3 d d d a a 4 4 4 e e . 
-                            . e a a a a a a 4 4 4 4 e e . . 
-                            . . e e b b 4 4 4 4 b e e . . . 
-                            . . . e e e e e e e e . . . . . 
-                            . . . . . . . . . . . . . . . .
-            """),
-            SpriteKind.player)
-        sprite.set_position(92 + x * 14, 33 + y * 14)
-        sprite.set_scale(0.8, ScaleAnchor.MIDDLE)
-i = 0
+    sprite.set_position(22 + value * 13, 36 + value * 13)
+    value += 1
+while value < 1:
+    sprite = sprites.create(img("""
+            . . . . . . b b b b a a . . . . 
+                    . . . . b b d d d 3 3 3 a a . . 
+                    . . . b d d d 3 3 3 3 3 3 a a . 
+                    . . b d d 3 3 3 3 3 3 3 3 3 a . 
+                    . b 3 d 3 3 3 3 3 b 3 3 3 3 a b 
+                    . b 3 3 3 3 3 a a 3 3 3 3 3 a b 
+                    b 3 3 3 3 3 a a 3 3 3 3 d a 4 b 
+                    b 3 3 3 3 b a 3 3 3 3 3 d a 4 b 
+                    b 3 3 3 3 3 3 3 3 3 3 d a 4 4 e 
+                    a 3 3 3 3 3 3 3 3 3 d a 4 4 4 e 
+                    a 3 3 3 3 3 3 3 d d a 4 4 4 e . 
+                    a a 3 3 3 d d d a a 4 4 4 e e . 
+                    . e a a a a a a 4 4 4 4 e e . . 
+                    . . e e b b 4 4 4 4 b e e . . . 
+                    . . . e e e e e e e e . . . . . 
+                    . . . . . . . . . . . . . . . .
+        """),
+        SpriteKind.player)
+    sprite.set_position(92 + x * 14, 33 + y * 14)
+    sprite.set_scale(0.8, ScaleAnchor.MIDDLE)
+value = 0
+while value < 1:
+    sprite = sprites.create(img("""
+            . . . . . . . e e e e . . . . . 
+                    . . . . . e e 4 5 5 5 e e . . . 
+                    . . . . e 4 5 6 2 2 7 6 6 e . . 
+                    . . . e 5 6 6 7 2 2 6 4 4 4 e . 
+                    . . e 5 2 2 7 6 6 4 5 5 5 5 4 . 
+                    . e 5 6 2 2 8 8 5 5 5 5 5 4 5 4 
+                    . e 5 6 7 7 8 5 4 5 4 5 5 5 5 4 
+                    e 4 5 8 6 6 5 5 5 5 5 5 4 5 5 4 
+                    e 5 c e 8 5 5 5 4 5 5 5 5 5 5 4 
+                    e 5 c c e 5 4 5 5 5 4 5 5 5 e . 
+                    e 5 c c 5 5 5 5 5 5 5 5 4 e . . 
+                    e 5 e c 5 4 5 4 5 5 5 e e . . . 
+                    e 5 e e 5 5 5 5 5 4 e . . . . . 
+                    4 5 4 e 5 5 5 5 e e . . . . . . 
+                    . 4 5 4 5 5 4 e . . . . . . . . 
+                    . . 4 4 e e e . . . . . . . . .
+        """),
+        SpriteKind.player)
+    sprite.set_position(92 + x * 14, 33 + y * 14)
+    sprite.set_scale(0.8, ScaleAnchor.MIDDLE)
